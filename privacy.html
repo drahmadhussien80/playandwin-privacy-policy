@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>سياسة الخصوصية وشروط الاستخدام – العب واكسب</title>
+<meta name="description" content="سياسة الخصوصية وشروط الاستخدام لتطبيق العب واكسب."/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════ إعدادات المتغيرات والألوان ═══════════════════ */
+:root{
+  --bg:#f8f9fa;
+  --surface:#ffffff;
+  --border:#e2e8f0;
+  --border-hover:#cbd5e1;
+
+  --primary:#1a3a6b;
+  --primary-light:#2c5282;
+
+  --orange:#f59e0b;
+  --orange-dark:#9a5b0f;
+  --orange-light:#fffbeb;
+
+  --green:#0b7a56;
+  --green-light:#ecfdf5;
+
+  --red:#b42323;
+  --red-light:#fef2f2;
+
+  --blue:#3b82f6;
+  --blue-light:#eff6ff;
+
+  --purple:#6d3fd1;
+  --purple-light:#f5f3ff;
+
+  --text:#1e293b;
+  --muted:#556275;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* ═══════════════════ تنسيقات عامة ═══════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:focus-visible{outline:3px solid var(--primary);outline-offset:3px;border-radius:6px;}
+
+body{
+  font-family:'Cairo',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+a{text-decoration:none;color:inherit;}
+
+/* ═══════════════════ الهيدر (Header) ═══════════════════ */
+header{
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  padding:16px 20px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+header h1{font-size:1.1rem;font-weight:800;color:var(--primary);letter-spacing:-0.5px;}
+header p{font-size:0.75rem;color:var(--muted);margin-top:4px;}
+header .back{display:inline-block;margin-top:6px;font-size:0.8rem;font-weight:700;color:var(--primary);text-decoration:underline;text-underline-offset:3px;}
+
+/* ═══════════════════ التبويبات (Tabs) ═══════════════════ */
+.tabs-container{
+  max-width:720px;
+  margin:20px auto 0;
+  padding:0 16px;
+}
+.tabs{
+  display:flex;
+  gap:10px;
+  background:var(--surface);
+  padding:6px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+
+.tab-btn{
+  flex:1;
+  padding:10px;
+  border-radius:10px;
+  border:none;
+  background:transparent;
+  font-family:'Cairo',sans-serif;
+  font-size:0.9rem;
+  font-weight:700;
+  color:var(--muted);
+  cursor:pointer;
+  transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+
+.tab-btn:hover{background:var(--bg);color:var(--primary);}
+.tab-btn.active{
+  background:var(--primary);
+  color:#fff;
+  box-shadow:0 2px 4px rgba(26, 58, 107, 0.3);
+}
+
+/* ═══════════════════ المحتوى (Content) ═══════════════════ */
+.tab-content{
+  display:none;
+  max-width:720px;
+  margin:0 auto;
+  padding:24px 16px 80px;
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.tab-content.active{display:block;}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════ البطاقات (Cards) ═══════════════════ */
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:16px;
+  margin-bottom:16px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover{
+  border-color:var(--border-hover);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.card-header{
+  background:var(--bg);
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  border-bottom:1px solid var(--border);
+}
+
+.card-icon{
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.3rem;
+  flex-shrink:0;
+}
+
+.card-meta{display:flex;flex-direction:column;justify-content:center;}
+.card-section{font-size:0.7rem;font-weight:800;color:var(--muted);letter-spacing:0.7px;margin-bottom:2px;}
+.card-title{font-size:1.05rem;font-weight:800;color:var(--primary);line-height:1.3;}
+
+.card-body{padding:20px;}
+
+/* ═══════════════════ عناصر النصوص والقوائم ═══════════════════ */
+.simple-text{font-size:0.9rem;color:var(--muted);line-height:1.8;text-align:justify;}
+.simple-text + .simple-text{margin-top:10px;}
+.simple-text a, .bullet a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;}
+
+.subtitle{font-size:0.85rem;font-weight:700;color:var(--text);margin:16px 0 10px;display:flex;align-items:center;gap:6px;}
+.subtitle:first-child{margin-top:0;}
+.subtitle::before{content:'';width:4px;height:16px;background:var(--orange);border-radius:2px;display:block;}
+
+.bullet{
+  display:flex;align-items:flex-start;gap:12px;
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:12px 16px;
+  margin-bottom:10px;
+  transition: background 0.2s;
+}
+.bullet:hover{background:#fff;}
+
+.bullet-dot{
+  width:10px;height:10px;
+  border-radius:50%;
+  background:var(--orange);
+  flex-shrink:0;
+  margin-top:8px;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+.bullet p{font-size:0.88rem;color:var(--text);line-height:1.7;}
+
+.step-num{
+  width:26px;height:26px;
+  border-radius:50%;
+  background:var(--primary);
+  color:#fff;
+  font-size:0.8rem;
+  font-weight:800;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+/* ═══════════════════ التنبيهات (Highlights) ═══════════════════ */
+.highlight{
+  border-radius:12px;
+  padding:14px 16px;
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  margin-bottom:10px;
+  border:1px solid transparent;
+}
+.highlight p{font-size:0.87rem;line-height:1.7;}
+.highlight a{font-weight:800;text-decoration:underline;text-underline-offset:3px;}
+
+/* ═══════════════════ بطاقة التواصل (Contact) ═══════════════════ */
+.contact-card{
+  border-radius:20px;
+  padding:30px 24px;
+  text-align:center;
+  margin-top:24px;
+  border:2px dashed var(--orange);
+  background:var(--orange-light);
+}
+.contact-card h3{font-size:1.2rem;font-weight:800;margin-bottom:8px;color:var(--primary);}
+.contact-card p{font-size:0.9rem;color:var(--muted);margin-bottom:20px;}
+
+.email-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 24px;
+  border-radius:12px;
+  border:2px solid var(--border);
+  background:var(--surface);
+  color:var(--primary);
+  font-family:'Cairo',sans-serif;
+  font-size:0.95rem;
+  font-weight:800;
+  transition:all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  direction:ltr;
+}
+.email-btn:hover{
+  border-color:var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background:var(--primary);
+  color:#fff;
+}
+
+/* ═══════════════════ التذييل (Footer) ═══════════════════ */
+.update-badge{
+  text-align:center;
+  padding:30px 0 10px;
+  font-size:0.8rem;
+  color:var(--muted);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+.update-badge span{color:var(--orange-dark);font-weight:800;}
+
+footer{
+  margin-top:auto;
+  text-align:center;
+  padding:24px;
+  border-top:1px solid var(--border);
+  background:var(--surface);
+  font-size:0.8rem;
+  color:var(--muted);
+}
+footer a{color:var(--primary);font-weight:700;text-decoration:underline;text-underline-offset:3px;}
+
+/* ═══════════════════ تخصيص الألوان حسب السياق ═══════════════════ */
+.bg-blue-light{background:var(--blue-light); color:var(--primary);}
+.bg-green-light{background:var(--green-light); color:var(--green);}
+.bg-purple-light{background:var(--purple-light); color:var(--purple);}
+.bg-red-light{background:var(--red-light); color:var(--red);}
+.bg-orange-light{background:var(--orange-light); color:var(--orange-dark);}
+
+.txt-orange-dark{color:var(--orange-dark);}
+.txt-green{color:var(--green);}
+.txt-red{color:var(--red);}
+
+.border-orange{border-color:rgba(245,158,11,0.35);}
+.border-green{border-color:rgba(16,185,129,0.35);}
+.border-red{border-color:rgba(239,68,68,0.35);}
+
+/* ═══════════════════ التجاوب مع الشاشات الصغيرة ═══════════════════ */
+@media (max-width: 480px) {
+  header h1{font-size:1rem;}
+  .card-header{padding:12px 16px;}
+  .card-body{padding:16px;}
+  .tab-btn{font-size:0.8rem;flex-direction:column;gap:4px;padding:12px 6px;}
+  .tab-btn span{font-size:1.2rem;}
+}
+@media (prefers-reduced-motion: reduce){
+  .tab-content{animation:none;}
+  .card,.tab-btn,.email-btn{transition:none;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>سياسة الخصوصية وشروط الاستخدام – العب واكسب</h1>
+  <p>آخر تحديث: أكتوبر 2026</p>
+  <a class="back" href="index.html">← العودة للصفحة الرئيسية</a>
+</header>
+
+<div class="tabs-container">
+  <div class="tabs" role="tablist">
+    <button class="tab-btn active" id="tab-privacy" onclick="switchTab('privacy', this)" role="tab" aria-selected="true" aria-controls="privacy">
+      <span aria-hidden="true">🔒</span> سياسة الخصوصية
+    </button>
+    <button class="tab-btn" id="tab-terms" onclick="switchTab('terms', this)" role="tab" aria-selected="false" aria-controls="terms">
+      <span aria-hidden="true">📜</span> شروط الاستخدام
+    </button>
+  </div>
+</div>
+
+<main>
+  <!-- ═══════════════════ سياسة الخصوصية ═══════════════════ -->
+  <div id="privacy" class="tab-content active" role="tabpanel" aria-labelledby="tab-privacy">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-orange-light" aria-hidden="true">👋</div>
+        <div class="card-meta"><span class="card-section">تمهيد</span><h2 class="card-title">مرحباً بك</h2></div>
+      </div>
+      <div class="card-body">
+        <p class="simple-text">مرحباً بك في تطبيق العب واكسب. نحن نُقدّر خصوصيتك ونحرص على حماية بياناتك. توضّح هذه السياسة المعلومات التي نجمعها، وكيف نستخدمها ونشاركها ونحميها، والخيارات المتاحة لك.</p>
+        <p class="simple-text">يُشغّل التطبيق <strong>أحمد حسين (Ahmed Hussien)</strong>، ويمكنك التواصل معنا عبر البريد الإلكتروني الموضح في آخر الصفحة. باستخدامك للتطبيق فإنك توافق على ما ورد في هذه السياسة.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-blue-light" aria-hidden="true">📋</div>
+        <div class="card-meta"><span class="card-section">القسم الأول</span><h2 class="card-title">المعلومات التي نجمعها</h2></div>
+      </div>
+      <div class="card-body">
+        <p class="subtitle">أ) معلومات تقدّمها أنت:</p>
+        <div class="bullet"><div class="bullet-dot"></div><p>الاسم الذي تُدخله عند التسجيل</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>البريد الإلكتروني (عند التسجيل بالبريد وكلمة المرور أو عبر Google)</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>رقم الهاتف (عند التحقق من الحساب برمز يصلك)</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>الصورة الشخصية (إذا اخترت رفعها)</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>كود الإحالة (إذا أدخلته أو شاركته)</p></div>
+
+        <p class="subtitle">ب) بيانات الاستخدام:</p>
+        <div class="bullet"><div class="bullet-dot"></div><p>نتائج الألعاب والنقاط المكتسبة وسجل المباريات</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>ترتيبك في لوحة المتصدرين ونتائج المواسم</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>نشاطك في غرف اللعب الأونلاين (الانضمام والتواجد ونتيجة المباراة)</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>سجل مكافآت الإعلانات التي حصلت عليها والحدود اليومية التي وصلت إليها</p></div>
+
+        <p class="subtitle">ج) بيانات الجهاز:</p>
+        <div class="bullet"><div class="bullet-dot"></div><p>نوع الجهاز ونظام التشغيل وإصدار التطبيق واللغة</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>معرّف للجهاز نستخدمه لربط حسابك بجهازك النشط وكشف الغش</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>رمز الإشعارات (FCM) لإرسال التذكيرات والإعلانات إليك</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>معرّف الإعلانات وبيانات تقنية أخرى تجمعها شركاؤنا في الإعلانات والتحليل (موضحة أدناه)</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>معلومات استخدام وأداء عامة، مثل الشاشات التي تفتحها وأداء التطبيق</p></div>
+
+        <div class="highlight bg-orange-light border-orange">
+          <span style="font-size:1.2rem;" aria-hidden="true">⚡</span>
+          <p class="txt-orange-dark">
+            نعرض الإعلانات عبر منصة <strong>Unity LevelPlay</strong> وشبكات الإعلانات المرتبطة بها (Unity Ads وYandex وInMobi). قد تجمع هذه الجهات معرّف الإعلانات وعنوان IP وبيانات الجهاز لعرض الإعلانات وقياسها وتخصيصها.
+            <a href="#third-party">التفاصيل في القسم الرابع</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-green-light" aria-hidden="true">⚙️</div>
+        <div class="card-meta"><span class="card-section">القسم الثاني</span><h2 class="card-title">كيفية استخدام المعلومات</h2></div>
+      </div>
+      <div class="card-body">
+        <div class="bullet"><div class="bullet-dot"></div><p>إنشاء حسابك وتمكينك من تسجيل الدخول</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>تشغيل الألعاب ومنح النقاط وعرض لوحة المتصدرين وأبطال المواسم</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>منع الغش والاحتيال وإساءة الاستخدام وحماية المستخدمين، بما يشمل تقييد المكافآت أو الحسابات وحظرها عند المخالفة</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>إرسال إشعارات مثل التذكير اليومي وإعلانات الإدارة وتنبيهات المواسم</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>عرض الإعلانات ومنحك مكافآت مقابل مشاهدتها</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>تحليل أداء التطبيق وإصلاح المشكلات وتطويره</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>الرد على طلبات الدعم والالتزام بالمتطلبات القانونية</p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-blue-light" aria-hidden="true">🤝</div>
+        <div class="card-meta"><span class="card-section">القسم الثالث</span><h2 class="card-title">مشاركة البيانات</h2></div>
+      </div>
+      <div class="card-body">
+        <div class="highlight bg-green-light border-green" style="margin-bottom:16px;">
+          <span style="font-size:1.2rem;" aria-hidden="true">🔒</span><p class="txt-green">نحن لا نبيع بياناتك الشخصية.</p>
+        </div>
+        <div class="bullet"><div class="bullet-dot"></div><p>مزودو الخدمات التقنية والتحليل والإعلانات الموضحون في القسم التالي</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>اللاعبون الآخرون: قد يظهر اسمك وترتيبك ونقاطك في لوحات المتصدرين</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>الجهات القانونية إذا طُلب ذلك رسمياً، أو لحماية حقوق المستخدمين وسلامتهم، أو لتطبيق قواعد الاستخدام</p></div>
+        <p class="simple-text" style="margin-top:6px;">قد تُخزَّن البيانات على خوادم في دول أخرى قد تختلف قوانين حماية البيانات فيها عن قوانين بلدك.</p>
+      </div>
+    </div>
+
+    <div class="card" id="third-party">
+      <div class="card-header">
+        <div class="card-icon bg-purple-light" aria-hidden="true">🔗</div>
+        <div class="card-meta"><span class="card-section">القسم الرابع</span><h2 class="card-title">خدمات الطرف الثالث</h2></div>
+      </div>
+      <div class="card-body">
+        <p class="subtitle">خدمات Google Firebase:</p>
+        <div class="bullet"><div class="bullet-dot"></div><p>Firebase Authentication – إدارة تسجيل الدخول (بريد وكلمة مرور، Google، رمز الهاتف)</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>Cloud Firestore – تخزين بيانات الحساب والنقاط والمباريات</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>Firebase Storage – تخزين الصور الشخصية</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>Cloud Functions – تنفيذ قواعد اللعب والمكافآت والتحقق منها على الخادم</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>Firebase Cloud Messaging – إرسال الإشعارات</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>Firebase Analytics – تحليل استخدام التطبيق</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">معلومات الخصوصية في Firebase</a> · <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">سياسة خصوصية Google</a></p></div>
+
+        <p class="subtitle">الإعلانات:</p>
+        <div class="bullet"><div class="bullet-dot"></div><p>Unity LevelPlay – منصة وساطة الإعلانات (بانر، وبيني، ومكافآت)</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p><a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">Unity Ads</a></p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p><a href="https://yandex.com/legal/confidential/" target="_blank" rel="noopener">Yandex</a></p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p><a href="https://www.inmobi.com/privacy-policy" target="_blank" rel="noopener">InMobi</a></p></div>
+        <p class="simple-text">يمكنك إعادة تعيين معرّف الإعلانات أو إيقاف الإعلانات المخصصة من إعدادات أندرويد (عادةً من الإعدادات ← الخصوصية ← الإعلانات).</p>
+
+        <p class="subtitle">القياس والتسويق:</p>
+        <div class="bullet"><div class="bullet-dot"></div><p>TikTok Business SDK – قياس عمليات تثبيت التطبيق وبعض الأحداث داخله · <a href="https://www.tiktok.com/legal/page/global/privacy-policy/en" target="_blank" rel="noopener">سياسة خصوصية TikTok</a></p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-green-light" aria-hidden="true">🛡️</div>
+        <div class="card-meta"><span class="card-section">القسم الخامس</span><h2 class="card-title">الأمان وحماية البيانات</h2></div>
+      </div>
+      <div class="card-body">
+        <p class="simple-text">نحمي بياناتك بقواعد وصول على قاعدة البيانات، وتحقق من الجانب الخادم، وإمكانيات الأمان في المنصات التي نستخدمها، لحمايتها من الوصول غير المصرح به أو الفقدان.</p>
+        <div class="highlight bg-orange-light border-orange" style="margin-top:16px;">
+          <span style="font-size:1.2rem;" aria-hidden="true">⚠️</span><p class="txt-orange-dark">لا يوجد نظام رقمي آمن بنسبة 100%. نبذل جهدنا لحماية بياناتك، لكن لا يمكننا ضمان أمان مطلق.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-red-light" aria-hidden="true">👶</div>
+        <div class="card-meta"><span class="card-section">القسم السادس</span><h2 class="card-title">خصوصية الأطفال</h2></div>
+      </div>
+      <div class="card-body">
+        <div class="highlight bg-red-light border-red">
+          <span style="font-size:1.2rem;" aria-hidden="true">🔞</span><p class="txt-red">التطبيق غير موجّه للأطفال دون 13 سنة، ولا نجمع بياناتهم عن قصد. إذا اكتشفنا حساباً لطفل دون 13 سنة سنحذفه، وإذا كنت تعتقد أن طفلاً أنشأ حساباً فتواصل معنا.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-orange-light" aria-hidden="true">✅</div>
+        <div class="card-meta"><span class="card-section">القسم السابع</span><h2 class="card-title">حقوق المستخدم</h2></div>
+      </div>
+      <div class="card-body">
+        <div class="bullet"><div class="bullet-dot"></div><p>طلب معرفة البيانات المحفوظة لدينا عنك</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>تصحيح بياناتك (يمكنك تعديل الاسم والصورة من داخل التطبيق)</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>طلب حذف حسابك وبياناتك</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>سحب موافقتك، مثل إيقاف الإشعارات من إعدادات جهازك أو إيقاف الإعلانات المخصصة</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>التوقف عن استخدام التطبيق في أي وقت</p></div>
+      </div>
+    </div>
+
+    <div class="card" id="delete-account">
+      <div class="card-header">
+        <div class="card-icon bg-red-light" aria-hidden="true">🗑️</div>
+        <div class="card-meta"><span class="card-section">القسم الثامن</span><h2 class="card-title">حذف الحساب والبيانات</h2></div>
+      </div>
+      <div class="card-body">
+        <p class="simple-text">يمكنك طلب حذف حسابك في تطبيق <strong>"العب واكسب"</strong> وبياناتك المرتبطة به في أي وقت، مباشرة من داخل التطبيق.</p>
+
+        <p class="subtitle" style="margin-top:16px;">خطوات حذف الحساب:</p>
+        <div class="bullet"><div class="step-num">1</div><p>افتح التطبيق وسجّل الدخول إلى حسابك</p></div>
+        <div class="bullet"><div class="step-num">2</div><p>انتقل إلى تاب <strong>"البروفايل"</strong> من القائمة السفلية</p></div>
+        <div class="bullet"><div class="step-num">3</div><p>مرّر الشاشة للأسفل حتى تصل إلى خيار <strong>"حذف الحساب"</strong></p></div>
+        <div class="bullet"><div class="step-num">4</div><p>اضغط على <strong>"حذف الحساب"</strong> ثم اضغط <strong>"موافقة"</strong> في رسالة التأكيد التي تظهر</p></div>
+
+        <p class="subtitle">البيانات التي يتم حذفها:</p>
+        <div class="bullet"><div class="bullet-dot"></div><p>الاسم والبريد الإلكتروني ورقم الهاتف</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>الصورة الشخصية المخزّنة على Firebase Storage</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>النقاط وسجل المباريات وترتيبك في لوحة المتصدرين</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>أي بيانات أخرى مرتبطة بحسابك في قاعدة البيانات</p></div>
+
+        <div class="highlight bg-orange-light border-orange" style="margin-top:8px;">
+          <span style="font-size:1.2rem;" aria-hidden="true">ℹ️</span>
+          <p class="txt-orange-dark">تُحذف بياناتك من أنظمتنا الفعّالة عند تأكيد الطلب، ولا يمكن التراجع عن الحذف. قد تبقى بعض السجلات مدة محدودة لسبب مشروع، مثل النسخ الاحتياطية التي تُستبدل دورياً، وسجلات منع الغش والحظر لمنع عودة الحسابات المحظورة.</p>
+        </div>
+
+        <div class="highlight bg-green-light border-green">
+          <span style="font-size:1.2rem;" aria-hidden="true">📧</span>
+          <p class="txt-green">لا تستطيع فتح التطبيق؟ راسلنا على <a href="mailto:drahmadhussien80@gmail.com">drahmadhussien80@gmail.com</a> من البريد المرتبط بحسابك واطلب حذفه، وسنؤكد لك عند الانتهاء.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-blue-light" aria-hidden="true">🔄</div>
+        <div class="card-meta"><span class="card-section">القسم التاسع</span><h2 class="card-title">تعديل هذه السياسة</h2></div>
+      </div>
+      <div class="card-body">
+        <p class="simple-text">قد نحدّث هذه السياسة من وقت لآخر، وسنغيّر تاريخ "آخر تحديث" أعلى الصفحة عند ذلك. وإذا كان التعديل جوهرياً فسننبهك داخل التطبيق.</p>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <h3>📧 تواصل معنا</h3>
+      <p>لأي استفسار يتعلق بخصوصيتك أو بياناتك</p>
+      <a href="mailto:drahmadhussien80@gmail.com" class="email-btn">✉ drahmadhussien80@gmail.com</a>
+    </div>
+
+    <div class="update-badge">📅 آخر تحديث: <span>أكتوبر 2026</span></div>
+  </div>
+
+  <!-- ═══════════════════ شروط الاستخدام ═══════════════════ -->
+  <div id="terms" class="tab-content" role="tabpanel" aria-labelledby="tab-terms">
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-orange-light" aria-hidden="true">📱</div>
+        <div class="card-meta"><span class="card-section">القسم الأول</span><h2 class="card-title">وصف التطبيق</h2></div>
+      </div>
+      <div class="card-body">
+        <p class="simple-text">العب واكسب هو تطبيق ألعاب ترفيهي يتيح للمستخدمين اللعب ضد الكمبيوتر أو الأصدقاء أو أونلاين، ومنافسة الآخرين وجمع النقاط وتصدر لوحة المتصدرين الأسبوعية. يُشغّل التطبيق أحمد حسين ("المشغّل").</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-green-light" aria-hidden="true">✍️</div>
+        <div class="card-meta"><span class="card-section">القسم الثاني</span><h2 class="card-title">قبول الشروط</h2></div>
+      </div>
+      <div class="card-body">
+        <div class="highlight bg-orange-light border-orange">
+          <span style="font-size:1.2rem;" aria-hidden="true">⚡</span><p class="txt-orange-dark">باستخدامك للتطبيق فإنك تُقرّ بقراءة هذه الشروط والموافقة عليها. إذا كنت لا توافق، يجب عليك التوقف عن استخدام التطبيق.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-orange-light" aria-hidden="true">🏆</div>
+        <div class="card-meta"><span class="card-section">القسم الثالث</span><h2 class="card-title">نظام النقاط</h2></div>
+      </div>
+      <div class="card-body">
+        <div class="bullet"><div class="bullet-dot"></div><p>تُمنح النقاط بناءً على أداء المستخدم الفعلي في الألعاب وضمن حدود يومية</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>النقاط ليست أموالاً حقيقية ولا تمثل قيمة نقدية قابلة للتحويل</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>اللعب المحلي على نفس الجهاز لا يمنح نقاطاً</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>يحق للمشغّل تعديل النقاط عند اكتشاف تلاعب أو خلل فني</p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-green-light" aria-hidden="true">🎁</div>
+        <div class="card-meta"><span class="card-section">القسم الرابع</span><h2 class="card-title">المكافآت</h2></div>
+      </div>
+      <div class="card-body">
+        <div class="bullet"><div class="bullet-dot"></div><p>قد تتوفر مكافآت للمستخدمين المتميزين وفقاً للمعايير المعلنة داخل التطبيق</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>لا توجد ضمانات بالحصول على مكافآت معينة</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>يحق للمشغّل تعديل نظام المكافآت أو إيقافه</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>هذه المكافآت والمسابقات ليست برعاية Google أو Apple أو مرتبطة بهما</p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-red-light" aria-hidden="true">🚫</div>
+        <div class="card-meta"><span class="card-section">القسم الخامس</span><h2 class="card-title">المحظورات</h2></div>
+      </div>
+      <div class="card-body">
+        <div class="bullet"><div class="bullet-dot"></div><p>استخدام برامج الغش أو التلاعب في نتائج الألعاب</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>استغلال الأخطاء التقنية</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>إنشاء حسابات متعددة لتضخيم النقاط أو المكافآت بالاحتيال</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>أي سلوك عدواني يضر ببيئة التنافس النزيه</p></div>
+        <div class="highlight bg-red-light border-red" style="margin-top:8px;">
+          <span style="font-size:1.2rem;" aria-hidden="true">⛔</span><p class="txt-red">في حالة المخالفة، يحق للمشغّل إيقاف الحساب أو حذفه وإلغاء النقاط المكتسبة بطريقة مخالفة، دون تعويض.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-blue-light" aria-hidden="true">⚖️</div>
+        <div class="card-meta"><span class="card-section">القسم السادس</span><h2 class="card-title">حدود المسؤولية</h2></div>
+      </div>
+      <div class="card-body">
+        <div class="bullet"><div class="bullet-dot"></div><p>لا يلتزم المشغّل بالتعويض عن فقدان البيانات لأسباب خارجة عن إرادته</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>قد تتوقف الخدمة مؤقتاً لأغراض الصيانة أو التحديث</p></div>
+        <div class="bullet"><div class="bullet-dot"></div><p>يُقدَّم التطبيق "كما هو"، ويتحمل المستخدم مسؤولية استخدامه</p></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-purple-light" aria-hidden="true">🏛️</div>
+        <div class="card-meta"><span class="card-section">القسم السابع</span><h2 class="card-title">القانون الواجب التطبيق</h2></div>
+      </div>
+      <div class="card-body">
+        <!-- TODO: confirm the governing law and jurisdiction with Ahmed / a lawyer. -->
+        <p class="simple-text">تخضع هذه الشروط لقوانين جمهورية مصر العربية، وتختص محاكمها بالنظر في أي نزاع ينشأ عنها.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon bg-blue-light" aria-hidden="true">🔄</div>
+        <div class="card-meta"><span class="card-section">القسم الثامن</span><h2 class="card-title">تعديل الشروط</h2></div>
+      </div>
+      <div class="card-body">
+        <p class="simple-text">قد يجري المشغّل تعديلات على هذه الشروط مستقبلاً، وسيغيّر تاريخ "آخر تحديث" عند ذلك. استمرارك في استخدام التطبيق بعد التعديل يعني موافقتك عليه.</p>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <h3>📧 تواصل معنا</h3>
+      <p>لأي استفسار يتعلق بشروط الاستخدام</p>
+      <a href="mailto:drahmadhussien80@gmail.com" class="email-btn">✉ drahmadhussien80@gmail.com</a>
+    </div>
+
+    <div class="update-badge">📅 آخر تحديث: <span>أكتوبر 2026</span></div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 العب واكسب · أحمد حسين · <a href="index.html">الصفحة الرئيسية</a></p>
+</footer>
+
+<script>
+function switchTab(tabId, btnElement) {
+  document.querySelectorAll('.tab-content').forEach(function (content) {
+    content.classList.remove('active');
+  });
+  document.querySelectorAll('.tab-btn').forEach(function (btn) {
+    btn.classList.remove('active');
+    btn.setAttribute('aria-selected', 'false');
+  });
+
+  var activeContent = document.getElementById(tabId);
+  if (activeContent) {
+    activeContent.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  if (btnElement) {
+    btnElement.classList.add('active');
+    btnElement.setAttribute('aria-selected', 'true');
+  }
+}
+
+// Open the terms tab directly when the link ends with #terms
+if (location.hash === '#terms') {
+  switchTab('terms', document.getElementById('tab-terms'));
+}
+</script>
+</body>
+</html>
